@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useReducer, useState } from 'react';
+import { todoReducer, initialState } from './reducers/reducer';
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+export default function App() {
+  const [state, dispatch] = useReducer(todoReducer, initialState);
+  const [todos, setTodos] = useState("");
+  const addTodo = item => dispatch({ type: "ADD", payload: item })
+  const clearCompleted = () => dispatch({ type: "CLEAR_COMPLETED" });
+  const toggleComplete = id => dispatch({ type: "TOGGLE_COMPLETE", id: id });
 
-export default App;
+
+
+
+  return (
+    <div className="container">
+      <TodoList todos={state.todos} toggleComplete={toggleComplete} />
+      <TodoForm addTodo={addTodo} clearCompleted={clearCompleted} />
+    </div>
+  )
+}
