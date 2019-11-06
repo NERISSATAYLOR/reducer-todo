@@ -7,7 +7,7 @@
 }
 
 .App-header {
-	background-color: #282c34;
+	background-color: #ffffff;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -25,6 +25,27 @@
 	color: pink;
 }
 button {
-	width: 90px;
-	height: 90px;
+	width: 190px;
+	height: 80px;
+	margin-top: 20px;
+}
+input {
+	width: 290px;
+	height: 80px;
+	margin-top: 20px;
+}
+li {
+	font-size: 40px;
+	margin-top: 40px;
+}
+ul {
+	background-color: rgb(10, 39, 184);
+	height: 300px;
+	margin-top: 20px;
+}
+.container {
+	background-color: #343434;
+	width: 800px;
+	height: 500px;
+	margin-top: 20px;
 }

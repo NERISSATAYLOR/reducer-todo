@@ -22,7 +22,7 @@ const TodoForm = (props) => {
                     value={addTodo}
                 />
                 <button type="submit" className="btn btn-success">+</button>
-                <button onClick={handleClear}>Clear Completed</button>
+                <button className="btn btn-danger" onClick={handleClear}>Clear Completed</button>
             </form>
 
         </div>
